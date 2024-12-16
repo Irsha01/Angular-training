@@ -1,0 +1,505 @@
+DAY 1 
+
+-> SINGLE PAGE APPLICATION 
+-> SPA VS MPA 
+-> ANGULAR JS VS ANGULAR 
+-> TYPESCRIPT 
+	- FUNDAMENTALS OF TYPESCRIPT
+	- INSTALL 
+	- VARIABLES 
+	- DATA TYPES 
+	- INTERFACE 
+
+..........................................................................
+
+DAY 2 
+
+-> TYPESCRIPT 
+    - FUNCTIONS 
+    - DIFFERENT TYPES OF FUNCTIONS
+    - ARROW FUNCTIONS VS REGULAR FUNCTIONS 
+    - 'this' KEYWORD 
+    - OOPS 
+    - CLASS & OBJECT 
+    - PROPERTIES OF OOPS 
+    - EXPORT & IMPORT 
+
+-> ANGULAR ARCHITECTURE 
+-> SETUP THE PROJECT 
+-> UNDERSTAND THE PROJECT 
+-> ANGULAR MODULES 
+-> ANGULAR COMPONENTS 
+
+...............................
+
+DAY 3 
+
+-> DATABINDING IN ANGULAR 
+-> DIRECTIVES IN ANGULAR 
+-> PIPES IN ANGULAR 
+-> SERVICES 
+-> DEPENDENCY INJECTION
+
+...................................
+SINGLE PAGE APPLICATION 
+
+-> url ========> request ======> server (server side / back end)
+client side /front end	response (html/css/js)-> index.html 
+
+-> page loading will happen only once 
+-> content of the page will get loaded through javascript 
+-> fast 
+..........................
+
+MULTI PAGE APPLICATION / TRADITIONAL APPROACH 
+
+-> page loading will happen again and again 
+-> slow
+
+..........................................................
+ANGULAR JS VS ANGULAR 
+
+ANGULAR JS 
+-> framework of JavaScript , written in JavaScript , ANGULAR JS 1.X, MVC , difficult to handle large and complex projects
+
+Model-> Chef
+View -> Customer & menu
+Controller ->  Waiter 
+......................................
+ANGULAR
+
+-> framework of JavaScript , written in TypeScript , ANGULAR 2..,Components, Services , DI , end to end testing , easy to handle large and complex projects . 
+
+...............................................
+
+TYPESCRIPT 
+
+-> FUNDAMENTALS OF TYPESCRIPT
+
+	- TYPE(DATA TYPE)+ SCRIPT 
+	- introduced in 2012 by Microsoft 
+	- strict type checking abilities , static typed language , strongly typed language 
+		name = 'Shipra'
+		name = 12345;// js -> no error // dynamic typed language 
+		//ts -> error 
+		type coercion 
+		'Shipra'+123= 'Shipra123'
+
+	- superset of JavaScript (ECMASCRIPT 2015 (ES6)) + additional features => TypeScript 
+	- it cannot be compiled directly 
+	- extension - .ts 
+
+.......................................
+
+INSTALLATION 
+
+-> VS CODE 
+-> NODE JS >> dont add additional features like chocolatey (dont tick the checkbox) 
+	admin rights >> mytechhelp(bot)
+
+TYPESCRIPT 
+
+-> npm install -g typescript 
+
+CHECK VERSION 
+-> tsc -v
+
+
+....................................................................
+
+TRANSPILATION 
+
+TYPESCRIPT => JAVASCRIPT 
+
+TRANSPILER -> TYPESCRIPT COMPILER(tsc)
+
+left terminal => ts - js => tsc name.ts --watch 
+right terminal => compile js => node --watch name.js
+
+
+...................................................................
+
+VARIABLES
+
+-> containers to store data 
+
+-> IMPLICIT DECLARATION 
+        - without keywords , not mentioning the data type 
+        var_name = value;
+
+-> EXPLICIT DECLARATION
+        - with keywords (var/let/const) , mention the data type 
+        var var_name : datatype = value;
+
+
+.................................................................
+
+DATA TYPES 
+
+-> BUILT IN DATATYPES   
+        -string 
+        -number
+        -boolean
+        -null
+        -undefined 
+        -bigint
+        -symbol
+-> SPECIAL DATATYPES
+        -any 
+        -void
+        -union 
+        -never
+        -unknown
+-> USER DEFINED DATATYPES
+        -array
+        -tuple
+        -object 
+        -date 
+        -enum 
+        -interface 
+        -functions 
+        -classes 
+
+................................
+
+INTERFACE 
+
+-> defines the shape of an object.
+
+
+.....................................
+
+FUNCTIONS
+
+-> statments that perform some task 
+-> reusable 
+
+
+- define the function
+        function func_name(parameter:datatype):returntype(string/number.../void/unknown/number/union....){
+            code
+        }
+- call the function
+    func_name(arguments)
+
+DIFFERENT TYPES OF FUNCTIONS
+
+sort(function(a,b)return a-b)
+
+-> ANONYMOUS FUNCTION
+    - a function without name
+function(parameter:datatype):returntype(string/number.../void/unknown/number/union....){
+            code
+        }
+
+
+  -   FUNCTION EXPRESSION
+
+ var var_name = function(parameter:datatype):returntype(string/number.../void/unknown/number/union....){
+            code
+        }//RHS - ANONYMOUS 
+ var_name(arguments)       
+
+ - ARROW FUNCTIONS
+
+ let var_name = (parameter:datatype):returntype => statment
+
+
+ ...........................................
+
+ OOPS 
+
+ -> code more modular 
+ -> reusable 
+ -> easy to debug & test 
+ -> handle large and complex projects 
+
+
+ CLASS AND OBJECT 
+
+ CLASS 
+ -> template or blueprint to create objects 
+
+ OBJECT 
+
+CLASS 
+-> PROPERTIES ~ Variables 
+-> CONSTRUCTOR ~ initialise the value of the properties , its automatically invoked once you create an instance of the class
+-> METHOD ~ function
+
+class class_name{
+    //properties
+    //CONSTRUCTOR
+    constructor(parameter){
+        initialise the properties
+    }
+
+    //METHOD
+    method_name(){
+
+    }
+}
+
+let obj = new class_name(arguments);
+
+.......................................................
+
+EXPORT & IMPORT 
+
+file1.ts 
+
+export default class ABCD{ // Default export 
+
+}
+
+export class ABC{ // named export 
+
+}
+
+export class XYZ{ // named export 
+
+}
+
+fil2.ts 
+import ABCD(Anyname) , {ABC,XYZ} from 'path'
+
+.....................................................................
+ANGULAR ARCHITECTURE 
+
+-> Building blocks of Angular 
+        - MODULES -> functionality & behaviour 
+        - COMPONENTS -> basic building of UI 
+        - SERVICES -> share some common data across components 
+        - DIRECTIVES -> extend the power of HTML elements 
+        - ROUTING -> handles navigation 
+
+  song1.mp3 , song2.mp3 ----> music       
+
+  ANGULAR >> 
+
+  ............................................
+
+  SETUP THE PROJECT
+
+  -> npm install -g @angular/cli@16
+
+  CHECK VERSION 
+
+  ng version 
+
+CREATE AN ANGULAR APPLICATION
+
+-> ng new <name>
+
+ng new MyApp
+
+..................................................................
+
+ANGULAR MODULES
+
+-> helps us to organise the application into cohesive blocks of functionality 
+-> Each block is performing a task 
+
+Decorator -> @name -> function that contains metadata about any property , class..
+
+@NgModule({
+  declarations: [
+    COMPONENTS , DIRECTIVES , PIPES 
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule, OTHER MODULES 
+  ],
+  providers: [SERVICES : global ],
+  bootstrap: [AppComponent]// root component of application
+})
+
+...................................................................
+
+INSTALL BOOTSTRAP
+-> adding responsive designs 
+npm install bootstrap 
+
+MyApp/node_modules/bootstrap/dist/css/bootstrap.min.css
+MyApp/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
+
+.............................................................................
+
+ANGULAR COMPONENTS 
+
+-> basic building block of UI 
+
+-> ng generate component name
+
+      - app >> name 
+          - name.component.css
+          - name.component.html
+          - name.component.spec.ts
+          - name.component.ts 
+
+ng g c course          
+
+
+...................................................................
+
+DATABINDING IN ANGULAR 
+
+    class     html 
+-> COMPONENT -> VIEW 
+    VIEW -> COMPONENT 
+
+
+-> ONE WAY DATABINDING
+        - INTERPOLATION BINDING 
+              COMPONENT -> VIEW 
+              {{templatename}}
+
+        - PROPERTY BINDING 
+              COMPONENT -> VIEW 
+              [propertyname] ='bindingname'
+
+        - EVENT BINDING
+              VIEW -> COMPONENT 
+              (eventname)
+
+-> TWO WAY DATABINDING
+
+      COMPONENT -> VIEW 
+      VIEW -> COMPONENT 
+
+      [(ngModel)] -> property of FormsModule -> binds the input value with the app data .
+
+
+      ng g c databind
+
+..................................................................................
+
+DIRECTIVES IN ANGULAR 
+
+-> extend the power of html elements
+
+DIFFERENT TYPES OF DIRECTIVES
+
+-> BUILT IN DIRECTIVES
+        - COMPONENT DIRECTIVE 
+                templateurls/ template , styleurls/styles
+
+          ng g c login      
+        - STRUCTURAL DIRECTIVE 
+                add/remove , iterating 
+                *ngIf -> add/remove
+                *ngFor -> iterating over the list of elements 
+        - ATTRIBUTE DIRECTIVE 
+                change the apperance / style 
+                [ngStyle]="{propertyname : value}";
+                [ngClass]="{classname : true/false}"   
+
+         ng g c directive             
+-> CUSTOM DIRECTIVES
+
+    ng g directive name 
+
+    app >> 
+      name .directive.ts 
+      name .directive.spec.ts 
+
+  ElementRef -> wrapper >> nativeElement
+
+      @directive({
+        selector : [xyz]
+      })
+
+
+<h3 xyz> 
+
+ng g directive custom
+
+..........................................................
+
+PIPES IN ANGULAR 
+
+- tansform the data to the required format . 
+- it will not alter the data 
+
+data ===> pipe ===> transformed data 
+
+{{data | pipename : parameter | pipename}}
+
+- BUILT IN PIPES 
+        - Uppercase 
+        - Lowercase
+        - titlecase 
+        - slice , arr = [8,4,5,6,7]  {{arr| slice : 1 : 4}}
+        - date {{data| date : 'short'}}
+        - currency {{data | currency : countrycode}}
+        - number  data = 4.56784515 {{data | number : '3.2-4'}} = 004.5678
+        - json {{data | json }}
+
+        ng g c pipe
+
+- CUSTOM PIPES 
+
+      ng g pipe name 
+
+    app >> 
+    name.pipe.ts   
+    name.pipe.spec.ts   
+
+pipeTransform -> interface helps in transformation 
+      transform (1st parameter,2nd parameter)-> returns the transformed data 
+    @pipe({
+      name : 'abc'
+    })
+
+    {{property | abc : 2nd parameter}}
+
+    ng g pipe custom
+
+    ................................................................
+
+    SERVICES 
+
+    -> share the common data across components .
+    -> create service for one component also 
+    -> fetch the data from server 
+    -> easy to debug and test 
+
+
+
+    COMPONENT1 - property1 , method1
+
+    COMPONENT2 - property1 , method1 , method2    Inject            SERVICE : - property1 , method1
+
+    COMPONENT3 - property1 , method1 , method3
+
+    //instance of a service 
+    let obj = new serviceclassname();
+
+    -> tightly coupled with the components 
+
+    ...........................................
+
+    DEPENDENCY INJECTION
+
+-> design pattern which helps us to inject the DEPENDENCY without considering how it is created 
+
+ng g service name 
+
+app >>
+
+name.service.ts
+name.service.spec.ts
+
+@Injectable({
+  providedIn : 'root'
+})
+
+app.module.ts 
+
+providers: [serviceclassname]
+
+//inject any DEPENDENCY
+
+constructor(private name : DEPENDENCYclassname)
+
+ng g service course
