@@ -1,0 +1,30 @@
+<div class="container mt-3">
+<div class="card">
+    <div class="card-header">
+        <h4 class="text-center">DATA BINDING METHODS</h4>
+    </div>
+    <div class="card-body">
+        <div class="bindings">
+            <h4 style="color:fuchsia">One Way</h4>
+            <p>My Fav Color is <b [style.color]="favcolor">{{favcolor}}</b></p>
+        </div>
+        <div class="bindings">
+            <h4 style="color:fuchsia">Property Data Binding</h4>
+            <p>This is Plain Text with center align</p>
+            <p [align]="Myalign">This is myalign using property binding</p>
+        </div>
+        <div class="bindings">
+            <h4 style="color:fuchsia">Event Data Binding</h4>
+            <p>This is Event binding with button click event.</p>
+            <button class="btn btn-primary" (click)="ClickMe()">Click me</button>
+        </div>
+        <div class="bindings">
+            <h4 style="color:fuchsia">Two Way Data Binding</h4>
+            <p>This is Two way data binding using ngModel</p>
+            <input type="text" placeholder="enter your name" [(ngModel)]="username">
+            <p>You are Logged in as {{username}}</p>
+        </div>
+    </div>
+</div>
+
+</div>

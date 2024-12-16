@@ -1,0 +1,29 @@
+<div class="container mt-3">
+
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h2>Post Datas From Sample API</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-light table-hover">
+                <thead>
+                    <tr>
+                        <td>Userid</td>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of Postdata">
+                        <td>{{data.userId}}</td>
+                        <td>{{data.id}}</td>
+                        <td>{{data.title}}</td>
+                        <td>{{data.body}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

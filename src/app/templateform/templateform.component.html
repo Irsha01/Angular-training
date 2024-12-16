@@ -1,0 +1,25 @@
+<div class="wholediv" align="center" style="background-color: lightblue; width: 500px;height: 400px;margin-left: auto;margin-right: auto;margin-top: 20px;">
+
+    <h3>Template Driven Form</h3>
+    <form #loginform="ngForm" (ngSubmit)="Login(loginform.value)">
+
+        <div class="details" style="background-color: greenyellow;width: 400px;padding: 10px;">
+            <label for="username"><b>Enter Username :</b></label>&nbsp;
+<input name="username" type="text" #username="ngModel" placeholder="Enter your name" required ngModel><br>
+<span [hidden]="username.valid || username.pristine" style="color: red; font-style: italic; font-size: 10px;">Username required</span><br>
+<label for="password"><b>Enter Password :</b></label>&nbsp;
+<input name="password" type="password" #password="ngModel" placeholder="Enter your password" required ngModel><br>
+<span [hidden]="password.valid || password.pristine" style="color: red; font-style: italic; font-size: 10px;">Password required</span><br>
+        </div>
+
+        <br>
+
+        <div ngModelGroup="security" style="background-color: goldenrod;width: 400px;"><br>
+<label>Enter Captcha : </label> &nbsp;
+<input type="text" name="captcha" ngModel><br><br>
+<label>Enter OTP : </label> &nbsp;
+<input type="text" name="otp" ngModel><br><br>
+        </div><br>
+<button class="btn btn-success" [disabled]="!loginform.valid">Submit</button>
+    </form>
+</div>

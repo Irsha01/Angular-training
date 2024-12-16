@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+        Show the All Courses using service and DI
+        </div>
+        <div class="card-body">
+
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>Course name</th>
+                        <th>Course id</th>
+                        <th>Duration</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of allcourse">
+                        <td><a [routerLink]="['/course',data.id]">{{data.name}}</a></td>
+                        <td>{{data.id}}</td>
+                        <td>{{data.duration}}</td>
+                        <td>{{data.status}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+<router-outlet></router-outlet>

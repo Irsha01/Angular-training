@@ -1,0 +1,25 @@
+<div class="wholediv" align="center" style="background-color: lightblue; width: 500px;height: 400px;margin-left: auto;margin-right: auto;margin-top: 20px;"> 
+
+    <h3>Template Driven Form</h3>
+    <form [formGroup]="Loginform" (ngSubmit)="Login()">
+
+        <div class="details" style="background-color: greenyellow;width: 400px;padding: 10px;">
+            <label for="username"><b>Enter Username :</b></label>&nbsp;
+<input formControlName="username" type="text"  placeholder="Enter your name"  ><br>
+<span *ngIf="Loginform.controls['username'].hasError('required')" style="color: red; font-style: italic; font-size: 10px;">Username required</span><br>
+<label for="password"><b>Enter Password :</b></label>&nbsp;
+<input formControlName="password" type="password"  placeholder="Enter your password"  ><br>
+<span *ngIf="Loginform.controls['password'].hasError('minlength')" style="color: red; font-style: italic; font-size: 10px;">Minlength of the password should be at least 8</span><br>
+        </div>
+
+        <br>
+
+        <div formGroupName="security" style="background-color: goldenrod;width: 400px;"><br>
+<label>Enter Captcha : </label> &nbsp;
+<input type="text" formControlName="captcha" ><br><br>
+<label>Enter OTP : </label> &nbsp;
+<input type="text" formControlName="otp" ><br><br>
+        </div><br>
+<button class="btn btn-success" >Submit</button>
+    </form>
+</div>
